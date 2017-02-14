@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>paper-value-check</title>
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+    <script src="../../iron-test-helpers/mock-interactions.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+    <link rel="import" href="../paper-value-check.html">
+  </head>
+  <body>
+    <test-fixture id="paperValueCheck">
+      <template>
+        <paper-value-check></paper-value-check> //TODO add attributes
+      </template>
+    </test-fixture>
+    <script>
+      suite('<paper-value-check>', function () {
+        var paperValueCheck;
+        setup(function () {
+          paperValueCheck = fixture('paperValueCheck');
+        });
+        teardown(function () {
+          //...
+        });
+        suite("This test is just to show that tests are running", function () {
+          test("test is running", function(done) {
+            done()
+          })
+        })
+        suite('These test allow you to interact with the element', function () {
+          test('can be triggered with space', function(done) {
+            paperValueCheck.addEventListener('keydown', function() {
+              done()
+            })
+            MockInteractions.pressSpace(paperValueCheck)
+          })
+          test('can be clicked', function(done) {
+            paperValueCheck.addEventListener('click', function() {
+              done()
+            })
+            MockInteractions.tap(paperValueCheck)
+          })
+        })
+      })
+    </script>
+  </body>
+</html>
