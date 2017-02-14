@@ -1,0 +1,18 @@
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../polymer/polymer.html">
+<!--
+  `<paper-value-check></paper-value-check>` test
+  @demo demo.html
+-->
+<dom-module id="paper-value-check">
+  <template>
+    <style>:host {display:inline-block}</style>
+    
+    [[label]] <paper-checkbox checked="{{value}}"></paper-checkbox>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "paper-value-check",
+  })
+</script>
